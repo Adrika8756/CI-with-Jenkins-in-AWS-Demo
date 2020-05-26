@@ -1,35 +1,36 @@
-apiVersion: apps/v1 
-kind: Deployment 
-metadata: 
-name: webapp1 
-spec: 
-replicas: 2 
-selector: 
-matchLabels: 
-app: webapp1 
-template: 
-metadata: 
-labels: 
-app: webapp1 
-spec: 
-containers: 
-- name: webapp1 
-image: pradipta18031990/kube8s:tagversion 
-ports: 
-- containerPort: 8080 
---- 
-apiVersion: v1 
-kind: Service 
-metadata: 
-name: webapp1-svc 
-labels: 
-app: webapp1 
-spec: 
-type: LoadBalancer 
-ports: 
-- protocol: TCP 
-port: 80 
-targetPort: 8080 
-selector: 
-app: webapp1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: myappgcr
+ labels:
+  app: myappgcr
+spec:
+ replicas: 2
+ selector:
+  matchLabels:
+   app: myappgcr
+ template:
+  metadata: 
+   labels:
+    app: myappgcr
+  spec:
+   containers:
+   - name: myappgcr
+     image: gcr.io/devops-Pradipta/pradipta18031990/dockerimagelearning:tagversion
+     ports:
+     - containerPort: 8080
 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myappgcr
+spec:
+  type: LoadBalancer
+  selector:
+    app: myappgcr
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
