@@ -30,7 +30,7 @@ pipeline {
 	   stage('Build Docker Image') { 
 		steps {
                    script {
-		      myimage = docker.build("gcr.io/devops-Pradipta/pradipta18031990/dockerimagelearning:${env.BUILD_ID}")
+		      myimage = docker.build("pradipta18031990/dockerimagelearning:${env.BUILD_ID}")
                    }
                 }
 	   }
