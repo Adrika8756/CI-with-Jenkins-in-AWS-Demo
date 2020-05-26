@@ -1,10 +1,11 @@
 pipeline { 
 agent any 
 environment { 
-PROJECT_ID = 'Nitin-Devops'
-CLUSTER_NAME = 'kuber-cluster-nit' 
-LOCATION = 'europe-north1-a' 
-CREDENTIALS_ID = 'kubernetes' 
+
+		PROJECT_ID = 'devops-Pradipta'
+    CLUSTER_NAME = 'k8-cluster-demo' 
+    LOCATION = 'europe-west3-c' 
+    CREDENTIALS_ID = 'K8' 
 } 
 stages { 
 stage("Checkout code") { 
@@ -27,7 +28,7 @@ sh 'mvn test'
 stage("Build image") { 
 steps { 
 script { 
-myapp = docker.build("120983/kube8s:${env.BUILD_ID}") 
+myapp = docker.build("pradipta18031990/updatedkube8s:${env.BUILD_ID}") 
 } 
 } 
 } 
