@@ -1,10 +1,10 @@
 pipeline { 
 agent any 
 environment { 
-PROJECT_ID = 'Pradipta-Devops'
+PROJECT_ID = 'devops-Pradipta'
 CLUSTER_NAME = 'k8-cluster-demo' 
-LOCATION = 'europe-north1-a' 
-CREDENTIALS_ID = 'kubernetes' 
+LOCATION = 'europe-west3-c' 
+CREDENTIALS_ID = 'K8' 
 } 
 stages { 
 stage("Checkout code") { 
