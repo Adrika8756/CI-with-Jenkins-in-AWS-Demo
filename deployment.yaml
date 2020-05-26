@@ -17,7 +17,7 @@ spec:
   spec:
    containers:
    - name: myappgcr
-     image: gcr.io/pradipta18031990/dockerimagelearning:tagversion
+     image: pradipta18031990/dockerimagelearning:tagversion
      ports:
      - containerPort: 8080
 
